@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app='picto'>
+  <head>
+    <meta charset="utf-8"/>
+    <title> Picto </title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  </head>
+  <body>
+    <h1> Picto </h1>
+    <div ng-controller='pictureController'>
+        <h4> Cats Edition </h4>
+        <div align='center'>
+          <select ng-options='option for option in names' ng-model='selectedItem' ng-change='selectedItemChanged()' value='names'>
+          </select>
+          <select ng-options='number for number in rating' ng-model='ratingNum' ng-change='ratingChanged()' value='test'>
+          </select>
+        </div>
+    <br>
+        <h2> {{currentTitle}} </h2>
+        <div class='pictures' align='center'>
+          <img align='center' ng-src='{{selectedItem}}'>
+        </div>
+        <div>
+          <h2> {{ratingTitle}} {{currentRating}} </h2>
+        </div>
+        <div class='upload'> Don't like our Cats? Upload your own! </div>
+        <form name='upload'>
+          <input align='center' type='text' name='title' placeholder='Cat Name' ng-model='catName'>
+          <input align='center' type='text' name='url' placeholder='Cat Link' ng-model='catLink'>
+          <div class='button'>
+            <button align='center' ng-click='catUpload()'> Upload </button>
+          </div>
+        </form>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="pictures.js"></script>
+  </body>
+</html>
