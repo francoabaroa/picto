@@ -1,0 +1,1 @@
+var Pic = require('./picModel.js');

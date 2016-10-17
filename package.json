@@ -10,7 +10,7 @@
   },
   "scripts": {
     "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash",
-    "start": "gulp start",
+    "start": "nodemon --ignore node_modules server.js",
     "lint": "eslint ./"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "mongodb": "^2.2.10",
     "mongoose": "^4.1.0",
     "morgan": "^1.1.1",
+    "nodemon": "^1.11.0",
     "q": "^1.4.1",
     "request": "^2.36.0"
   },
