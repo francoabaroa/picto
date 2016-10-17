@@ -24,10 +24,11 @@
         <div>
           <h2> {{ratingTitle}} {{currentRating}} </h2>
         </div>
-        <div class='upload'> Don't like our Cats? Upload your own! </div>
+        <div class='upload'> Upload your own picto! </div>
         <form name='upload'>
-          <input align='center' type='text' name='title' placeholder='Cat Name' ng-model='catName'>
-          <input align='center' type='text' name='url' placeholder='Cat Link' ng-model='catLink'>
+          <input align='center' type='text' name='title' placeholder='Pic Name' ng-model='picName'>
+          <input align='center' type='text' name='url' placeholder='Pic Link' ng-model='picLink'>
+          <input align='center' type='number' name='rating' placeholder='Pic Rating' ng-model='picRating'>
           <div class='button'>
             <button align='center' ng-click='catUpload()'> Upload </button>
           </div>

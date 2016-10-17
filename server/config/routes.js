@@ -1,10 +1,9 @@
-var userController = require('../pictures/picController.js');
-var helpers = require('./helpers.js'); // our custom middleware
+// var linksController = require('../links/linkController.js');
+// var userController = require('../users/userController.js');
+// var helpers = require('./helpers.js'); // our custom middleware
 
 // module.exports = function (app, express) {
 //   app.get('/:code', linksController.navToLink);
-
-
 
 //   app.post('/api/users/signin', userController.signin);
 //   app.post('/api/users/signup', userController.signup);
@@ -20,3 +19,4 @@ var helpers = require('./helpers.js'); // our custom middleware
 //   app.use(helpers.errorLogger);
 //   app.use(helpers.errorHandler);
 // };
+

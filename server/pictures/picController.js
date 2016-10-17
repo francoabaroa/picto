@@ -21,6 +21,6 @@ module.exports = {
     })
     .fail(function (err) {
       next(err);
-    })
+    });
   }
 };
