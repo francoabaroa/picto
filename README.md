@@ -1,6 +1,6 @@
 # picto photo project
 
-technologies used thus far: AngularJS, CSS, HTML
+technologies used thus far: AngularJS, NodeJS, ExpressJS, MongoDB, CSS, HTML.
 
 
 currently completing stages 0, 1 & 2.
