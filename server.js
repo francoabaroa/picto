@@ -31,6 +31,7 @@ app.use('/', express.static(path.join(__dirname, 'client')));
 // });
 
 app.post('/pics', picController.newPic);
+app.get('/pics', picController.getAllPics);
 
 // start listening to requests on port 8000
 console.log('picto is listening on 4568');

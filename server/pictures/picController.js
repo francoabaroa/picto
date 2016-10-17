@@ -11,13 +11,21 @@ module.exports = {
     var url = req.body.url;
     var name = req.body.name;
     var rating = req.body.rating;
-    console.log('in new PICS!!');
-    console.log('req.body: ', req.body);
     createPic({name: name, url: url, rating: rating})
     .then(function (pic) {
       if (pic) {
         res.json(pic);
       }
+    })
+    .fail(function (err) {
+      next(err);
+    });
+  },
+
+  getAllPics: function (req, res, next) {
+    findAllPics({})
+    .then(function (pics) {
+      res.json(pics);
     })
     .fail(function (err) {
       next(err);
