@@ -46,12 +46,12 @@ angular.module('picto', [])
       $scope.currentRating = $scope.obj[$scope.index].rating = $scope.ratingNum;
     };
 
-     $scope.allPics = function () {
+    $scope.allPics = function () {
       Pics.getAll()
       .then(function (pics) {
         pics.forEach(function (pic) {
           $scope.obj.push(pic);
-        })
+        });
         $scope.selectedItem = $scope.obj[2].url;
       })
       .catch(function (err) {
