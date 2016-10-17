@@ -53,6 +53,12 @@ select {
 
 }
 
+.left, .right {
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+}
+
 .button {
   text-align: center;
   font-family: 'Gloria Hallelujah', cursive;

@@ -32,7 +32,39 @@ angular.module('picto', [])
     $scope.obj = [];
     $scope.names = ['Paco', 'Flaco', 'Taco', 'Caco'];
     $scope.rating = [1, 2, 3, 4, 5];
-    $scope.currInd = 3;
+    $scope.currIndex = 0;
+    $scope.maxLength = $scope.obj.length;
+
+    $scope.key = function ($event) {
+      if ($event.keyCode == 39) {
+        $scope.rightClick();
+      } else if ($event.keyCode == 37) {
+        $scope.leftClick();
+      }
+    }
+
+    $scope.rightClick = function () {
+      if ($scope.obj.length === $scope.currIndex) {
+        $scope.currIndex = 0;
+        $scope.selectedItem = $scope.obj[$scope.currIndex].url;
+      } else {
+        $scope.currIndex++;
+        $scope.selectedItem = $scope.obj[$scope.currIndex].url;
+      }
+    }
+
+    $scope.leftClick = function () {
+      if (0 === $scope.currIndex) {
+        console.log('ZERO');
+        console.log($scope.maxLength);
+        console.log($scope.obj.length);
+        $scope.currIndex = $scope.obj.length;
+        $scope.selectedItem = $scope.obj[$scope.currIndex].url;
+      } else {
+        $scope.currIndex--;
+        $scope.selectedItem = $scope.obj[$scope.currIndex].url;
+      }
+    }
 
     $scope.selectedItemChanged = function () {
       $scope.index = $scope.indices[$scope.selectedItem];
@@ -52,6 +84,7 @@ angular.module('picto', [])
         pics.forEach(function (pic) {
           $scope.obj.push(pic);
         });
+        $scope.currIndex = 2;
         $scope.selectedItem = $scope.obj[2].url;
       })
       .catch(function (err) {
@@ -65,6 +98,10 @@ angular.module('picto', [])
       Pics.addOne({name: $scope.picName, rating: $scope.picRating, url: url})
       .then(function (pic) {
         $scope.selectedItem = pic.url;
+        $scope.picLink = '';
+        $scope.picName = '';
+        $scope.picRating = '';
+
         //TODO: do something with pic
       })
       .catch(function (err) {

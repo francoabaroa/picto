@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1> picto </h1>
-    <div ng-controller='pictureController'>
+    <div ng-controller='pictureController' ng-keydown='key($event)'>
         <!-- <h4> all categories </h4> -->
         <div align='center'>
           <select ng-options='option for option in names' ng-model='selectedItem' ng-change='selectedItemChanged()' value='names'>
@@ -17,9 +17,11 @@
           </select>
         </div>
     <br>
-        <h2> {{currentTitle}} </h2>
+        <h2> {{currentTitle}} {{event}} </h2>
         <div class='pictures' align='center'>
+          <span class='left' ng-click='leftClick()'> Left </span>
           <img align='center' ng-src='{{selectedItem}}'>
+          <span class='right' ng-click='rightClick()'> Right </span>
         </div>
         <div>
           <h2> {{ratingTitle}} {{currentRating}} </h2>
