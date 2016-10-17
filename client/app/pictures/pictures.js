@@ -36,12 +36,12 @@ angular.module('picto', [])
     $scope.maxLength = $scope.obj.length;
 
     $scope.key = function ($event) {
-      if ($event.keyCode == 39) {
+      if ($event.keyCode === 39) {
         $scope.rightClick();
-      } else if ($event.keyCode == 37) {
+      } else if ($event.keyCode === 37) {
         $scope.leftClick();
       }
-    }
+    };
 
     $scope.rightClick = function () {
       if ($scope.obj.length === $scope.currIndex) {
@@ -51,7 +51,7 @@ angular.module('picto', [])
         $scope.currIndex++;
         $scope.selectedItem = $scope.obj[$scope.currIndex].url;
       }
-    }
+    };
 
     $scope.leftClick = function () {
       if (0 === $scope.currIndex) {
@@ -64,7 +64,7 @@ angular.module('picto', [])
         $scope.currIndex--;
         $scope.selectedItem = $scope.obj[$scope.currIndex].url;
       }
-    }
+    };
 
     $scope.selectedItemChanged = function () {
       $scope.index = $scope.indices[$scope.selectedItem];
